@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://timbrady.org/turk/TimTurkTools.js"></script>
+<script>
+/* For advancing to the next page or previous page: */
+function NextPage(curPage) {
+    $('#page' + curPage).hide();
+    $('#page' + (curPage+1)).show();
+    window.scrollTo(0,0);
+    return true;
+}
+
+function NextPageNew(pageId) {
+    $(pageId).hide();  /* I have no idea why this doesn't take a hashtag */
+    curPage = parseInt($(pageId).val());
+    $('#page' + (curPage+1)).show();
+    window.scrollTo(0,0);
+    return true;
+}
+
+var today = new Date();
+var seed = today.getSeconds();
+
+function shuffle(array, seed) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random(seed) * currentIndex);
+    currentIndex -= 1;
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+var WhichArr = [0, 1, 2, 3];
+shuffle(WhichArr, seed);
+/* Choose condition: */
+
+/*var fileArray = new Array("https://db.tt/NrxyMIZH", "https://db.tt/xS4YarEo", "https://db.tt/oqbk7nwa", "https://db.tt/o6AN4XCC");*/
+var fileArray = new Array("https://db.tt/3EbQjYMP", "https://db.tt/bYuxsNEJ", "https://db.tt/wFImRR9N", "https://db.tt/MilVVWXI");
+var nameArray = new Array("UndercoverWire", "HauntedHouse", "PieMan", "PhoneCallHome");
+var messageArray = new Array("<b>Undercover Wire</b> <br> <br> Sally and Jack met a week ago. Jack is a technician who designs gadgets for picking up sounds.  He is about to tell Sally a story.","<b>Haunted House.</b> <br> <br> A family with young daughters has just moved into a haunted house.  Creepy things happen at night.  It is currently bedtime.","<b>Pie Man</b> <br> <br> A stand-up comedian is about to tell a story","<b>Phone Call Home</b> <br> <br>Kim is a teenaged girl who is currently traveling in Paris.");
+var entertainmentTypeArray = new Array("movie", "movie", "comedy routine", "movie");
+var firstFile = fileArray[WhichArr[0]];
+var secondFile = fileArray[WhichArr[1]];
+var thirdFile = fileArray[WhichArr[2]];
+var fourthFile = fileArray[WhichArr[3]];
+var firstSound = nameArray[WhichArr[0]];
+var secondSound = nameArray[WhichArr[1]];
+var thirdSound = nameArray[WhichArr[2]];
+var fourthSound = nameArray[WhichArr[3]];
+var firstMessage = messageArray[WhichArr[0]];
+var secondMessage = messageArray[WhichArr[1]];
+var thirdMessage = messageArray[WhichArr[2]];
+var fourthMessage = messageArray[WhichArr[3]];
+</script>
+
+<style>
+body {
+    font-family: Arial, Helvetica;
+}
+.makeButton {
+    padding:5px; 
+    background: #DDDDDD; 
+    border:3px outset gray; 
+    color: black; 
+    text-decoration:none;
+}
+.makeButton:hover {
+    border: 3px inset gray;
+}
+.pageDiv {
+    padding-bottom: 40px;
+}
+#submitButton {
+    font-size: 17pt;
+    font-weight: bold;
+    padding: 4px;
+}
+</style>
+
+<!-- Begin usual Turk code -->
+<h1>Let's listen to some stories!</h1>
+<div id="page1" class="pageDiv"
+<br><br>
+<p style="margin-left:15%; margin-right:15%">In the following HIT, you will listen to four sound clips, each about 7 minutes long, all taken from entertainment sources (e.g. film, tv, radio). You'll answer some basic questions about each clip, like &quot;Can you tell me what happened in this clip?&quot; <br><br>This HIT should take under an hour to complete. We do ask that you complete this HIT in one sitting and that you do not multi-task while performing the HIT. <br><br> <b>Therefore, there is a strict 2 hour timeout on this HIT. Please don't accept the HIT if you think you cannot dedicate an un-interrupted hour to this.</b></p>
+<p style="margin-left:15%; margin-right:15%" >Please only complete this HIT once. (If you have already completed a HIT with this same name and requester, please don't do the HIT again.)  <br><br> <b>This HIT is for native English speakers only.</b></p>
+<p style="margin-left:15%; margin-right:15%"><span style="color: rgb(255, 0, 0);"><b>Please note: You will need headphones or speakers.</b></span></p>
+<table cellpadding="10" border="1" class="forPreviewOnly" align="center" width="75%" style="margin-top: 20px; margin-bottom: 20px">
+        <tr>
+            <td>      
+                <p><small>This survey is part of an ongoing research program at Johns Hopkins University and has been approved by the Johns Hopkins Institutional Review Board. Please read&nbsp;<a href="https://db.tt/YqyFy3Mt" target="_blank">this form</a>&nbsp;for additional information. By agreeing to this survey, you acknowledge that you have read the form, are participating voluntarily, and are 18 years of age or older and have normal or corrected-to-normal hearing. Your participation in this research is voluntary,
+                and you may decline further participation without adverse consequences. Your anonymity is assured. If you have questions about this research, or if you would like 
+                 to receive a report when it is completed, please contact the lab at plasticity_lab@jhu.edu. </small></p>
+            </td>
+        </tr>
+</table>
+<script>
+document.write("<input type='hidden' name='ArrayShuffle' value='"+WhichArr+"'>");
+</script>
+<p style="text-align:center"><a href="#" OnClick="NextPage(1)" class="makeButton">Click here to begin!</a></p>
+</div>
+<!-- end page -->
+
+<div style="display: none; text-align: center" id="page2" class="pageDiv">
+<p><b>Sound Check</b></p>
+<p>You must have headphones or speakers to complete this HIT. Please test them by playing and identifying these sounds.
+<br><br>
+<p>&nbsp;</p>
+<center>
+<audio controls=""><source src="https://db.tt/SPtFHVZA" type="audio/mpeg" /><embed height="50" src="https://db.tt/SPtFHVZA" width="100"></embed></audio>
+</center>
+<p>This sound was a:</p>
+<table style="margin: 0 auto">
+    <tbody>
+        <tr>
+            <td><input type="radio" value="Bird" name="Test1" /></td>
+            <td>Bird</td>
+        </tr>
+        <tr>
+            <td><input type="radio" value="Cat" name="Test1" /></td>
+            <td>Cat</td>
+        </tr> 
+        <tr>
+            <td><input type="radio" value="Dog" name="Test1" /></td>
+            <td>Dog</td>
+        </tr>
+         <tr>
+            <td><input type="radio" value="Pig" name="Test1" /></td>
+            <td>Pig</td>
+        </tr>
+    </tbody>
+</table>
+<br><br>
+<p>&nbsp;</p>
+<center>
+<audio controls=""><source src="https://db.tt/jal8Gjn3" type="audio/mpeg" /><embed height="50" src="https://db.tt/jal8Gjn3" width="100"></embed></audio>
+</center>
+<p>The word spoken was:</p>
+<table  style="margin: 0 auto">
+    <tbody>
+        <tr>
+            <td><input type="radio" value="Guitar" name="Test2" /></td>
+            <td>Guitar</td>
+        </tr>
+        <tr>
+            <td><input type="radio" value="Television" name="Test2" /></td>
+            <td>Television</td>
+        </tr> 
+        <tr>
+            <td><input type="radio" value="Bicycle" name="Test2" /></td>
+            <td>Bicycle</td>
+        </tr>
+         <tr>
+            <td><input type="radio" value="Radio" name="Test2" /></td>
+            <td>Radio</td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<p><a onclick="NextPage(2)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<div style="display: none; text-align: center" id="page3" class="pageDiv">
+<br><br>
+<p style="margin-left:15%; margin-right:15%">Now we are going to ask you to listen to the 4 clips. After each clip, you will be asked a few questions about the clip you just heard.  The questions are not designed to be tricky.  Please don't overthink them.  We are interested in your assessment and understanding of the clips.  There is no need to take notes as you listen to the clips.  You should listen to the clips as you would watch a movie in the movie theater. </p>
+<p>&nbsp;</p>
+<p><a onclick="NextPage(3)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<!-- start CLIP 1 SECTION -->
+<div style="display: none; text-align: center; margin-left:15%; margin-right:15%" id="page4" class="pageDiv">
+<br><br>
+<p style="margin-left:15%; margin-right:15%; text-align: left">Clip 1 is about to start.  Once you click on the "next page" button below, the clip will begin to play.  You will only be able to listen to the clip once.  You will not be able to rewind or pause the clip. Here is some background for the clip you are about to hear. </p>
+<script>
+             document.write("&nbsp;&nbsp;<p>" + firstMessage + "<p>&nbsp;<p></p>");
+             document.write("<input type='hidden' name='firstMessage' value='" + firstMessage + "'>");
+</script>
+<p><a onclick="NextPage(4)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<div style="display: none; text-align: center" id="page5" class="pageDiv">
+<br><br>
+<p style="font-size: 18pt"><b>Clip 1</b></p>
+<td><audio id="firstSoundPlay">
+<script>
+          document.write("<source src='" + firstFile +"'' type='audio/wav'>");
+          document.write("<input type='hidden' name='firstSound' value='" + firstSound + "'>");
+          document.write("<input type='hidden' name='firstFile' value='" + firstFile + "'>");
+</script>
+</audio></td>
+<p>&nbsp;</p>
+<p><a class="makeButton" onclick="document.getElementById('firstSoundPlay').play()">Click here to play</a></p>
+<script>
+document.getElementById("firstSoundPlay").onended = function() {
+     $('#page' + 5).hide();
+    $('#page' + firstSound).show();
+    $('#page' + firstSound).val(6);
+    window.scrollTo(0,0);
+    };
+</script> 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+<!-- end CLIP 1 SECTION -->
+
+<!-- start CLIP 2 SECTION -->
+<div style="display: none; text-align: center; margin-left:15%; margin-right:15%" id="page7" class="pageDiv">
+<br><br>
+<p style="margin-left:15%; margin-right:15%; text-align: left">Clip 2 is about to start.  Once you click on the "next page" button below, the clip will begin to play.  You will only be able to listen to the clip once.  You will not be able to rewind or pause the clip. Here is some background for the clip you are about to hear.</p>
+<script>
+             document.write("&nbsp;&nbsp;<p>" + secondMessage + "<p>&nbsp;<p></p>");
+             document.write("<input type='hidden' name='secondMessage' value='" + secondMessage + "'>");
+</script>
+<p><a onclick="NextPage(7)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<div style="display: none; text-align: center" id="page8" class="pageDiv">
+<br><br>
+<p style="font-size: 18pt"><b>Clip 2</b></p>
+<td><audio id="secondSoundPlay">
+<script>
+          document.write("<source src='" + secondFile +"'' type='audio/wav'>");
+          document.write("<input type='hidden' name='secondSound' value='" + secondSound + "'>");
+          document.write("<input type='hidden' name='secondFile' value='" + secondFile + "'>");
+</script>
+</audio></td>
+<p>&nbsp;</p>
+<p><a class="makeButton" onclick="document.getElementById('secondSoundPlay').play()">Click here to play</a></p>
+<script>
+document.getElementById("secondSoundPlay").onended = function() {
+     $('#page' + 8).hide();
+     $('#page' + secondSound).show();
+     $('#page' + secondSound).val(9);
+    window.scrollTo(0,0);
+    };
+</script> 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+<!-- end CLIP 2 SECTION -->
+
+<!-- start CLIP 3 SECTION -->
+<div style="display: none; text-align: center; margin-left:15%; margin-right:15%" id="page10" class="pageDiv">
+<br><br>
+<p style="margin-left:15%; margin-right:15%; text-align: left"> Clip 3 is about to start.  Once you click on the "next page" button below, the clip will begin to play.  You will only be able to listen to the clip once.  You will not be able to rewind or pause the clip. Here is some background for the clip you are about to hear. </p>
+<script>
+             document.write("&nbsp;&nbsp;<p>" + thirdMessage + "<p>&nbsp;<p></p>");
+             document.write("<input type='hidden' name='thirdMessage' value='" + thirdMessage + "'>");
+</script>
+<p><a onclick="NextPage(10)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<div style="display: none; text-align: center" id="page11" class="pageDiv">
+<br><br>
+<p style="font-size: 18pt"><b>Clip 3</b></p>
+<td><audio id="thirdSoundPlay">
+<script>
+          document.write("<source src='" + thirdFile +"'' type='audio/wav'>");
+          document.write("<input type='hidden' name='thirdSound' value='" + thirdSound + "'>");
+          document.write("<input type='hidden' name='thirdFile' value='" + thirdFile + "'>");
+</script>
+</audio></td>
+<p>&nbsp;</p>
+<p><a class="makeButton" onclick="document.getElementById('thirdSoundPlay').play()">Click here to play</a></p>
+<script>
+document.getElementById("thirdSoundPlay").onended = function() {
+     $('#page' + 11).hide();
+     $('#page' + thirdSound).show();
+     $('#page' + thirdSound).val(12);
+    window.scrollTo(0,0);
+    };
+</script> 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+<!-- end CLIP 3 SECTION -->
+
+<!-- start CLIP 4 SECTION -->
+<div style="display: none; text-align: center; margin-left:15%; margin-right:15%" id="page13" class="pageDiv">
+<br><br>
+<p style="margin-left:15%; margin-right:15%; text-align: left;">Clip 4 is about to start.  Once you click on the "next page" button below, the clip will begin to play.  You will only be able to listen to the clip once.  You will not be able to rewind or pause the clip. Here is some background for the clip you are about to hear. </p>
+<script>
+             document.write("&nbsp;&nbsp;<p>" + fourthMessage + "<p>&nbsp;<p></p>");
+             document.write("<input type='hidden' name='fourthMessage' value='" + fourthMessage + "'>");
+</script>
+<p><a onclick="NextPage(13)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<div style="display: none; text-align: center" id="page14" class="pageDiv">
+<br><br>
+<p style="font-size: 18pt"><b>Clip 4</b></p>
+<td><audio id="fourthSoundPlay">
+<script>
+          document.write("<source src='" + fourthFile +"'' type='audio/wav'>");
+          document.write("<input type='hidden' name='fourthSound' value='" + fourthSound + "'>");
+          document.write("<input type='hidden' name='fourthFile' value='" + fourthFile + "'>");
+</script>
+</audio></td>
+<p>&nbsp;</p>
+<p><a class="makeButton" onclick="document.getElementById('fourthSoundPlay').play()">Click here to play</a></p>
+<script>
+document.getElementById("fourthSoundPlay").onended = function() {
+     $('#page' + 14).hide();
+     $('#page' + fourthSound).show();
+     $('#page' + fourthSound).val(15);
+    window.scrollTo(0,0);
+    };
+</script> 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+<!-- end CLIP 4 SECTION -->
+
+<div style="display: none; text-align: center" id="page16" class="pageDiv">
+<br><br>
+<p style="font-size: 16pt">Please answer a few questions about yourself</p>
+<p>&nbsp;</p>
+<p>What is your gender? </p> 
+<p><input type="radio" class="responseButton" name="Gender" value="Male"> Male</p>
+<p><input type="radio" class="responseButton" name="Gender" value="Female"> Female</p>
+<p>&nbsp;</p>
+<p>What is your age? </p> 
+<p><input type="text" name="Age" id="Age"></p>
+<p>&nbsp;</p>
+<p>Which of the following best describes your highest completed level of education?</p> 
+<select class="form-control" name="Education"><option selected="selected" value="select one">- select one -</option><option value="Some High School">Some High School</option><option value="Some college, no degree">Some college, no degree</option><option value="Associates degree">Associates degree</option><option value="Bachelors degree">Bachelors degree</option><option value="Graduate degree (Masters, Doctorate, etc.)">Graduate degree (Masters, Doctorate, etc.)</option> </select>
+<p>&nbsp;</p>
+<p><a onclick="NextPage(16)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<div style="display: none; text-align: center" id="page17" class="pageDiv">
+<br><br>
+<p style="font-size: 16pt">Please let us know if you had any technical difficulties with this HIT.</p>
+<p>&nbsp;</p>
+<label>Were there any problems hearing or loading the audio files?<br> <br></label><textarea class="form-control" cols="250" name="Problems" rows="6"></textarea>
+<p>&nbsp;</p>
+<p><a onclick="NextPage(17)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<div style="display: none; text-align: center" id="page18" class="pageDiv">
+<br><br>
+<p>Thanks, you're all done! Please click to submit the HIT.</p>
+<!-- End usual Turk code -->
+<p>
+<input id="submitButton" type="submit" name="Submit" value="Submit">
+<p>
+</div>
+
+
+<!-- UndercoverWire Questions -->
+<div style="display: none; text-align: left; margin-left:25%; margin-right:15%" id="pageUndercoverWire" class="pageDiv" value="">
+<br><br>
+<p style="font-size: 16pt">Answer some questions about <b>Undercover Wire</b></p>
+<p>&nbsp;</p>
+<p>Jack meets Sally at </p> 
+<select required class="form-control" name="UndercoverWire01">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">the airport</option>
+<option value="2">her house</option>
+<option value="3">a bus stop</option>
+<option value="4">a train station</option>
+</select>
+<p>&nbsp;</p>
+<p>Jack says that he was a communication wizz from what state? </p> 
+<select required class="form-control" name="UndercoverWire02">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">New York</option>
+<option value="2">California</option>
+<option value="3">New Jersey</option>
+<option value="4">Illinois</option>
+</select>
+<p>&nbsp;</p>
+<p>How does Jack know that something is wrong with the wire? </p> 
+<select required class="form-control" name="UndercoverWire03">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">he begins to hear static</option>
+<option value="2">the sound abruptly cuts out</option>
+<option value="3">the wired cop speaks to him through the wire</option>
+<option value="4">he starts to pick up a local radio station</option>
+</select>
+<p>&nbsp;</p>
+<p>What caused the wire to malfunction? </p> 
+<select required class="form-control" name="UndercoverWire04">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">a cable came loose</option>
+<option value="2">the clothing created interference</option>
+<option value="3">excessive sweat</option>
+<option value="4">blocked signal from going through a tunnel</option>
+</select>
+<p>&nbsp;</p>
+<p>Who was the undercover cop trying to record in conversation? </p> 
+<select required class="form-control" name="UndercoverWire05">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">a corrupt city manager</option>
+<option value="2">a corrupt police captain</option>
+<option value="3">a corrupt mayor</option>
+<option value="4">a corrupt D.A.</option>
+</select>
+<p>&nbsp;</p>
+<p>The undercover cop excuses himself to check the wire, saying "Pull over, ... </p> 
+<select required class="form-control" name="UndercoverWire06">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">"... I gotta take a piss"</option>
+<option value="2">"... we need more gas"</option>
+<option value="3">"... I'm hungry"</option>
+<option value="4">"... I gotta take a dump"</option>
+</select>
+<p>&nbsp;</p>
+<p>What gave away that the cop was wearing a wire? </p> 
+<select required class="form-control" name="UndercoverWire07">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">the wire emitted loud radio static</option>
+<option value="2">the wire came visibly loose</option>
+<option value="3">someone felt the wire under his clothes</option>
+<option value="4">the wire started burning his leg</option>
+</select>
+<p>&nbsp;</p>
+<p>What happened to the cop wearing the wire? </p> 
+<select required class="form-control" name="UndercoverWire08">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">he obtained the secret information</option>
+<option value="2">he apprehended the gangster</option>
+<option value="3">he shot the man threatening his partner</option>
+<option value="4">he was probably killed</option>
+</select>
+<p>&nbsp;</p>
+<p>How did Jack learn what happened to the cop wearing the wire? </p> 
+<select required class="form-control" name="UndercoverWire09">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">he received a police report</option>
+<option value="2">he went to the cop's last location</option>
+<option value="3">he read about it in the newspaper</option>
+<option value="4">he spoke to the cop using a secret microphone</option>
+</select>
+<p>&nbsp;</p>
+<p>The wired undercover cop is named? </p> 
+<select required class="form-control" name="UndercoverWire10">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">Freddy</option>
+<option value="2">Marty</option>
+<option value="3">Ronny</option>
+<option value="4">Lanny</option>
+</select>
+<p>&nbsp;</p>
+<script>document.write("<p>The clip you just listened to is from a " + entertainmentTypeArray[0] +". Have you seen this " + entertainmentTypeArray[0] +" before? </p>");</script>
+<p><input type="radio" class="responseButton" name="UndercoverWireHeardBefore" value="Yes"> Yes</p>
+<p><input type="radio" class="responseButton" name="UndercoverWireHeardBefore" value="No"> No</p>
+<p>&nbsp;</p>
+<script>document.write("<p>If yes, can you name the " + entertainmentTypeArray[0] +"?</p>");</script>
+<p><input type="text" name="UndercoverWireName"></p>
+<p>&nbsp;</p>
+<p><a onclick="NextPageNew(pageUndercoverWire)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<!-- HauntedHouse Questions -->
+<div style="display: none; text-align: left; margin-left:25%; margin-right:15%" id="pageHauntedHouse" class="pageDiv" value="">
+<br><br>
+<p style="font-size: 16pt">Answer some questions about <b>Haunted House</b></p>
+<p>&nbsp;</p>
+<p>Christine's sister is named? </p> 
+<select required class="form-control" name="HauntedHouse01">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">Nancy</option>
+<option value="2">Anna</option>
+<option value="3">Jenny</option>
+<option value="4">Laurie</option>
+</select>
+<p>&nbsp;</p>
+<p>The clip ends with </p> 
+<select required class="form-control" name="HauntedHouse02">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">Christine screaming</option>
+<option value="2">the family dog barking violently</option>
+<option value="3">a loud crash and the ticking of a clock</option>
+<option value="4">the ghost yelling threats of murder to the family</option>
+</select>
+<p>&nbsp;</p>
+<p>What part of Christine's body does the ghost touch? </p> 
+<select required class="form-control" name="HauntedHouse03">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">her neck</option>
+<option value="2">her arm</option>
+<option value="3">her face</option>
+<option value="4">her feet</option>
+</select>
+<p>&nbsp;</p>
+<p>Where does Christine see the ghost? </p> 
+<select required class="form-control" name="HauntedHouse04">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">under the bed</option>
+<option value="2">in the bedroom closet</option>
+<option value="3">behind the bedroom door</option>
+<option value="4">in the hallway outside the bedroom</option>
+</select>
+<p>&nbsp;</p>
+<p>What gives away that the ghost is somewhere in the bedroom? </p> 
+<select required class="form-control" name="HauntedHouse05">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">a spooky moan</option>
+<option value="2">a glowing set of eyes</option>
+<option value="3">a bad odor</option>
+<option value="4">a loud rapping on the walls</option>
+</select>
+<p>&nbsp;</p>
+<p>Right before being attacked by the ghost, Christine tells her sister that the ghost is </p> 
+<select required class="form-control" name="HauntedHouse06">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">"...floating above you"</option>
+<option value="2">"...standing right behind you"</option>
+<option value="3">"...touching you"</option>
+<option value="4">"...grabbing me"</option>
+</select>
+<p>&nbsp;</p>
+<p>Who runs into the bedroom because of the shouting? </p> 
+<select required class="form-control" name="HauntedHouse07">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">parents</option>
+<option value="2">siblings</option>
+<option value="3">the family dog</option>
+<option value="4">ghost hunters</option>
+</select>
+<p>&nbsp;</p>
+<p>Christine tells her parents that the ghost </p> 
+<select required class="form-control" name="HauntedHouse08">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">"wants to drag you to Hell"</option>
+<option value="2">"wants my family dead"</option>
+<option value="3">"wants to eat my soul"</option>
+<option value="4">"wants me to kill my family"</option>
+</select>
+<p>&nbsp;</p>
+<script>document.write("<p>The clip you just listened to is from a " + entertainmentTypeArray[1] +". Have you seen this " + entertainmentTypeArray[0] +" before? </p>");</script>
+<p><input type="radio" class="responseButton" name="HauntedHouseHeardBefore" value="Yes"> Yes</p>
+<p><input type="radio" class="responseButton" name="HauntedHouseHeardBefore" value="No"> No</p>
+<p>&nbsp;</p>
+<script>document.write("<p>If yes, can you name the " + entertainmentTypeArray[1] +"?</p>");</script>
+<p><input type="text" name="HauntedHouseName"></p>
+<p>&nbsp;</p>
+<p><a onclick="NextPageNew(pageHauntedHouse)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<!-- PieMan Questions -->
+<div style="display: none; text-align: left; margin-left:25%; margin-right:15%" id="pagePieMan" class="pageDiv" value="">
+<br><br>
+<p style="font-size: 16pt">Answer some questions about <b>Pie Man</b></p>
+<p>&nbsp;</p>
+<p>What university did the stand up comedian attend? </p> 
+<select required class="form-control" name="PieMan01">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">Fordham</option>
+<option value="2">Rutgers</option>
+<option value="3">Columbia</option>
+<option value="4">Princeton</option>
+</select>
+<p>&nbsp;</p>
+<p>The comedian worked for the school newspaper as </p> 
+<select required class="form-control" name="PieMan02">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">a photographer</option>
+<option value="2">an editor</option>
+<option value="3">a reporter</option>
+<option value="4">a food writer</option>
+</select>
+<p>&nbsp;</p>
+<p>The comedian mentions what kind of pie? </p> 
+<select required class="form-control" name="PieMan03">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">strawberry-rhubarb</option>
+<option value="2">cream</option>
+<option value="3">apple</option>
+<option value="4">a la mode</option>
+</select>
+<p>&nbsp;</p>
+<p>The comedian attended school in </p> 
+<select required class="form-control" name="PieMan04">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">the Bronx</option>
+<option value="2">San Francisco</option>
+<option value="3">Miami</option>
+<option value="4">Chicago</option>
+</select>
+<p>&nbsp;</p>
+<p>What does the Pie-man do for a living? </p> 
+<select required class="form-control" name="PieMan05">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">he is a cook</option>
+<option value="2">he is a clown</option>
+<option value="3">he is a mathematician</option>
+<option value="4">his profession is unknown</option>
+</select>
+<p>&nbsp;</p>
+<p>Who is the victim of the Pie-man's first prank? </p> 
+<select required class="form-control" name="PieMan06">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">a visiting parent of a student</option>
+<option value="2">the head of a fraternity</option>
+<option value="3">the dean of the university</option>
+<option value="4">a member of the cafeteria staff</option>
+</select>
+<p>&nbsp;</p>
+<p>Pie-Man's "catch phrase" is Latin for: </p> 
+<select required class="form-control" name="PieMan07">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">"I came, I saw, I conquered"</option>
+<option value="2">"I am not an animal"</option>
+<option value="3">"I strive toward higher things"</option>
+<option value="4">"I bear the fortunes of youth"</option>
+</select>
+<p>&nbsp;</p>
+<p>What does Sheila, the student body president, want for the university? </p> 
+<select required class="form-control" name="PieMan08">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">A ban on outdoor drinking</option>
+<option value="2">A student recreational center</option>
+<option value="3">An end to late-night campus curfews</option>
+<option value="4">More sororities</option>
+</select>
+<p>&nbsp;</p>
+<p>What does the narrator tell the girl (Angela) he wants impress? </p> 
+<select required class="form-control" name="PieMan09">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">that he gives Pie-Man ideas for pranks</option>
+<option value="2">that he can introduce her to Pie-Man</option>
+<option value="3">that he invented the Pie-Man</option>
+<option value="4">that he is the Pie-Man</option>
+</select>
+<p>&nbsp;</p>
+<p>How does the stand up comedian know when the second attack will occur? </p> 
+<select required class="form-control" name="PieMan10">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">He gets a personal letter</option>
+<option value="2">He gets a text</option>
+<option value="3">He gets a phone call</option>
+<option value="4">He hears about it from a friend</option>
+</select>
+<p>&nbsp;</p>
+<script>document.write("<p>The clip you just listened to is from a " + entertainmentTypeArray[2] +". Have you seen this " + entertainmentTypeArray[0] +" before? </p>");</script>
+<p><input type="radio" class="responseButton" name="PieManHeardBefore" value="Yes"> Yes</p>
+<p><input type="radio" class="responseButton" name="PieManHeardBefore" value="No"> No</p>
+<p>&nbsp;</p>
+<script>document.write("<p>If yes, can you name the " + entertainmentTypeArray[2] +"?</p>");</script>
+<p><input type="text" name="PieManName"></p>
+<p>&nbsp;</p>
+<p><a onclick="NextPageNew(pagePieMan)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+<!-- PhoneCallHome Questions -->
+<div style="display: none; text-align: left; margin-left:25%; margin-right:15%" id="pagePhoneCallHome" class="pageDiv" value="">
+<br><br>
+<p style="font-size: 16pt">Answer some questions about <b>Phone Call Home</b></p>
+<p>&nbsp;</p>
+<p>Kim is currently where? </p> 
+<select required class="form-control" name="PhoneCallHome01">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">Barcelona, Spain</option>
+<option value="2">Paris, France</option>
+<option value="3">London, UK</option>
+<option value="4">Berlin, Germany</option>
+</select>
+<p>&nbsp;</p>
+<p>Kim's mother tells Kim's father </p> 
+<select required class="form-control" name="PhoneCallHome02">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">"Give her some space.  She'll call."</option>
+<option value="2">"Call your daughter.  She misses you."</option>
+<option value="3">"Don't forget to bring home milk"</option>
+<option value="4">"Kim called today.  She sounds like she's enjoying herself"</option>
+</select>
+<p>&nbsp;</p>
+<p>Kim's father asks her for </p> 
+<select required class="form-control" name="PhoneCallHome03">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">the address where she's staying</option>
+<option value="2">the phone number where she's staying</option>
+<option value="3">her skype name</option>
+<option value="4">her european mobile number</option>
+</select>
+<p>&nbsp;</p>
+<p>Kim's father tells the kidnappers that he has </p> 
+<select required class="form-control" name="PhoneCallHome04">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">a lot of money</option>
+<option value="2">a samurai sword collection</option>
+<option value="3">a particular set of skills</option>
+<option value="4">a black-belt in karate</option>
+</select>
+<p>&nbsp;</p>
+<p>Kim is supposed to be traveling with </p> 
+<select required class="form-control" name="PhoneCallHome05">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">her friends</option>
+<option value="2">her siblings</option>
+<option value="3">her cousins</option>
+<option value="4">her boyfriend</option>
+</select>
+<p>&nbsp;</p>
+<p>What is Kim's reason for calling her father? </p> 
+<select required class="form-control" name="PhoneCallHome06">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">to report that she's been arrested</option>
+<option value="2">to warn him that he's in danger</option>
+<option value="3">to say hello from abroad</option>
+<option value="4">to complain about her traveling companion</option>
+</select>
+<p>&nbsp;</p>
+<p>Kim tells her father that she met a man named Peter. How does she know him? </p> 
+<select required class="form-control" name="PhoneCallHome07">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">sat next to him on a flight</option>
+<option value="2">befriended him on a bus tour</option>
+<option value="3">took a cab with him</option>
+<option value="4">asked him for help lifting her suitcase</option>
+</select>
+<p>&nbsp;</p>
+<p>Kim's father tells her to do all of the following EXCEPT? </p> 
+<select required class="form-control" name="PhoneCallHome08">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">cry for help out the window</option>
+<option value="2">hide under the bed</option>
+<option value="3">leave the bathroom</option>
+<option value="4">yell the description of her abductor</option>
+</select>
+<p>&nbsp;</p>
+<p>What does the kidnapper say to the father? </p> 
+<select required class="form-control" name="PhoneCallHome09">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">"don't come looking"</option>
+<option value="2">"you'll never see her again"</option>
+<option value="3">"your daughter belongs to me now"</option>
+<option value="4">"good luck"</option>
+</select>
+<p>&nbsp;</p>
+<p>What does the father threaten to do? </p> 
+<select required class="form-control" name="PhoneCallHome10">
+<option selected="selected" value="select one">- select one -</option>
+<option value="1">torture the kidnapper's associates for information</option>
+<option value="2">alert the authorities</option>
+<option value="3">help the kidnapper's enemies</option>
+<option value="4">find and kill the kidnapper</option>
+</select>
+<p>&nbsp;</p>
+<script>document.write("<p>The clip you just listened to is from a " + entertainmentTypeArray[3] +". Have you seen this " + entertainmentTypeArray[0] +" before? </p>");</script>
+<p><input type="radio" class="responseButton" name="PhoneCallHomeHeardBefore" value="Yes"> Yes</p>
+<p><input type="radio" class="responseButton" name="PhoneCallHomeHeardBefore" value="No"> No</p>
+<p>&nbsp;</p>
+<script>document.write("<p>If yes, can you name the " + entertainmentTypeArray[3] +"?</p>");</script>
+<p><input type="text" name="PhoneCallHomeName"></p>
+<p>&nbsp;</p>
+<p><a onclick="NextPageNew(pagePhoneCallHome)" href="#" class="makeButton">Click here to go to the next page</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<!-- end page -->
+
+</html>
